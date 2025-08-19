@@ -1,1 +1,15 @@
+#include <unordered_set>
+class Solution {
+public:
+    bool twoSum(vector<int>& arr, int target) {
+        unordered_set<int> s;
+        for (int num : arr) {
+            if (s.count(target - num)) {
+                return true;
+            }
+            s.insert(num);
+        }
+        return false;
+    }
+};
 
